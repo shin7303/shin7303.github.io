@@ -16,19 +16,19 @@
             color: #333;
         }
 
-        /* ナビゲーションバーのスタイル - スクロールで表示/非表示用 */
+        
         nav {
             text-align: center;
             padding: 10px 0;
             background: #555555;
-            position: fixed; /* 固定表示 */
-            top: 0; /* 初期位置は画面上部 */
+            position: fixed; 
+            top: 0;
             left: 0;
             right: 0;
-            width: 100%; /* 幅いっぱい */
-            z-index: 1000; /* 他の要素より前面に */
-            transition: top 0.3s ease-in-out; /* スムーズなアニメーション */
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* 影を追加して浮いているように見せる */
+            width: 100%;
+            z-index: 1000;
+            transition: top 0.3s ease-in-out;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
 
         nav a {
@@ -54,7 +54,7 @@
         }
 
         section {
-            padding: 25px 0; /* containerで左右paddingを設定したので0に */
+            padding: 25px 0;
             margin-bottom: 20px;
             border-bottom: 1px #dddddd solid;
         }
@@ -115,7 +115,6 @@
         @media(max-width: 768px){
             .container {
                 width: 95%;
-                /* padding-top はJavaScriptで動的に設定される */
             }
 
             nav a {
@@ -244,7 +243,6 @@
             // ページの読み込み完了時とリサイズ時にpadding-topを設定
             window.addEventListener('load', setContainerPadding);
             window.addEventListener('resize', setContainerPadding);
-            // DOMContentLoadedでも一度実行 (ただし画像などの読み込み前だと高さが不安定になる場合あり)
             setContainerPadding();
 
 
