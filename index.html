@@ -8,10 +8,10 @@
         /* --- 基本的なスタイル --- */
         body {
             font-family: 'Arial', 'Hiragino Sans', 'Meiryo', sans-serif;
-            line-height: 1.8;
+            line-height: 1.7; /* 少し行間を調整 */
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #f0f0f0; /* 明るいグレー */
             color: #333;
         }
 
@@ -20,105 +20,121 @@
             margin: auto;
             overflow: hidden;
             padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            background-color: #ffffff; /* 白 */
+            box-shadow: 0 0 10px rgba(0,0,0,0.05); /* 影を少し薄く */
         }
 
         header {
-            background: #333;
-            color: #fff;
-            padding: 1rem 0;
+            background: #333333; /* ダークグレー */
+            color: #f8f9fa;     /* 明るいグレー（ほぼ白） */
+            padding: 1.5rem 0;  /* 少し余白調整 */
             text-align: center;
-            border-bottom: #0779e4 3px solid;
+            border-bottom: #555555 3px solid; /* グレーのボーダー */
         }
 
         header h1 {
             margin: 0;
-            font-size: 2.5rem;
+            font-size: 2.2rem; /* 少しフォントサイズ調整 */
         }
 
         nav {
             text-align: center;
             padding: 10px 0;
-            background: #444;
+            background: #555555; /* 中間色のグレー */
         }
 
         nav a {
-            color: #fff;
+            color: #f0f0f0; /* 明るいグレー */
             text-decoration: none;
             padding: 10px 20px;
             font-weight: bold;
         }
         nav a:hover {
-            background: #0779e4;
+            background: #444444; /* 少し濃いグレー */
         }
 
         section {
-            padding: 20px;
+            padding: 25px 20px; /* 余白調整 */
             margin-bottom: 20px;
-            border-bottom: 1px #eee solid;
+            border-bottom: 1px #dddddd solid; /* 薄いグレーのボーダー */
         }
         section:last-child {
             border-bottom: none;
         }
 
         h2 {
-            color: #333;
-            border-bottom: 2px solid #0779e4;
-            padding-bottom: 5px;
+            color: #333333;
+            border-bottom: 2px solid #555555; /* グレーのボーダー */
+            padding-bottom: 8px;
+            margin-top: 0; /* section直下のh2の余白調整 */
         }
 
         h3 {
-            color: #555;
+            color: #444444;
             margin-top: 30px;
+        }
+        h4 {
+            color: #555555;
+            margin-top: 25px;
         }
 
         /* --- プロジェクト関連のスタイル --- */
         .project {
             margin-bottom: 30px;
-            padding: 15px;
-            background-color: #f9f9f9;
-            border-left: 5px solid #0779e4;
+            padding: 20px;
+            background-color: #f9f9f9; /* 非常に明るいグレー */
+            border-left: 5px solid #777777; /* グレーのアクセント */
         }
 
         .project-image {
             max-width: 100%;
             height: auto;
             display: block;
-            margin: 15px 0;
-            border: 1px solid #ddd;
+            margin: 15px auto; /* 中央揃え */
+            border: 1px solid #cccccc; /* 薄いグレーのボーダー */
             border-radius: 4px;
         }
 
+        .project-details {
+            margin-top: 10px;
+        }
+        .project-details p {
+            margin-bottom: 0.5em;
+        }
+        .project-details strong {
+            color: #444;
+        }
+
+
         /* --- コード表示のスタイル --- */
         pre {
-            background-color: #2d2d2d; /* ダークな背景 */
-            color: #f8f8f2; /* 明るいテキストカラー */
+            background-color: #2b2b2b; /* ダークな背景 */
+            color: #f0f0f0;     /* 明るいテキストカラー */
             padding: 15px;
             border-radius: 5px;
             overflow-x: auto; /* 横スクロールを可能に */
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 0.9em;
-            line-height: 1.5;
+            font-family: 'Consolas', 'Monaco', 'Courier New', Courier, monospace; /* コード向けフォント */
+            font-size: 0.85em; /* 少し小さめ */
+            line-height: 1.6;
         }
 
         code {
-            font-family: 'Courier New', Courier, monospace;
+            font-family: 'Consolas', 'Monaco', 'Courier New', Courier, monospace;
         }
         /* インラインコードのスタイル */
-        p > code, li > code {
-            background-color: #eee;
-            padding: 2px 4px;
+        p > code, li > code, span > code {
+            background-color: #e0e0e0; /* 明るいグレー */
+            padding: 2px 5px;
             border-radius: 3px;
-            color: #c7254e;
+            color: #333333;
         }
 
 
         footer {
             text-align: center;
             padding: 20px;
-            background: #333;
-            color: #fff;
+            background: #333333; /* ダークグレー */
+            color: #f0f0f0;     /* 明るいグレー */
             margin-top: 30px;
         }
 
@@ -128,11 +144,14 @@
                 width: 95%;
             }
             header h1 {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
             nav a {
                 display: block;
                 padding: 8px;
+            }
+            .project-image {
+                max-width: 90%; /* スマホ表示で少し小さく */
             }
         }
 
@@ -140,7 +159,7 @@
 </head>
 <body>
     <header>
-        <h1>私の名前 / My Name</h1>
+        <h1>[あなたの名前] - ポートフォリオ</h1>
     </header>
 
     <nav>
@@ -152,150 +171,415 @@
     <div class="container">
         <section id="about">
             <h2>自己紹介 (About Me)</h2>
-            <img src="images/profile.jpg" alt="プロフィール写真" style="width:150px; height:150px; border-radius:50%; float:left; margin-right:20px;">
-            <!-- ↑ images/profile.jpg はご自身の画像に置き換えてください -->
+            <!-- <img src="images/profile.jpg" alt="プロフィール写真" style="width:150px; height:150px; border-radius:50%; float:left; margin-right:20px;"> -->
+            <!-- ↑ プロフィール写真が必要な場合は、この行のコメントを解除し、`images/profile.jpg` をご自身の画像に置き換えてください -->
             <p>
                 はじめまして。[あなたの名前]です。
                 ここにあなたの自己紹介文を記述します。どのような技術に興味があり、どのような物を作ってきたか、
                 これからどのようなことに挑戦したいかなどを自由に記述してください。
                 趣味や特技なども加えると、よりパーソナルな紹介になります。
             </p>
-            <div style="clear:both;"></div> <!-- float解除 -->
+            <!-- <div style="clear:both;"></div> --> <!-- float解除 (画像を使用する場合) -->
             <h3>スキル</h3>
             <ul>
-                <li>プログラミング言語: Python, JavaScript, Java, HTML, CSS など</li>
-                <li>フレームワーク/ライブラリ: React, Vue.js, Django, Spring Boot など</li>
-                <li>データベース: MySQL, PostgreSQL, MongoDB など</li>
-                <li>ツール: Git, Docker, AWS など</li>
+                <li>プログラミング言語: C++, Python, JavaScript, HTML, CSS など</li>
+                <li>マイコン/ボード: ProMicro, Raspberry Pi Pico など</li>
+                <li>ツール/環境: Arduino IDE, KiCAD, Git, Google Colab など</li>
+                <!-- 他のスキルも適宜追加してください -->
             </ul>
         </section>
 
         <section id="projects">
             <h2>制作物 (Projects)</h2>
 
-            <!-- プロジェクト1 -->
+            <!-- プロジェクト1: 本科4年 -->
             <article class="project">
-                <h3>プロジェクト名 1: すごいタスク管理アプリ</h3>
+                <h3>本科4年: タッチタイピング可能な片手日本語入力デバイスの製作</h3>
                 <p>
-                    このプロジェクトは、日々のタスクを効率的に管理するために開発したウェブアプリケーションです。
-                    ユーザーはタスクの追加、編集、削除、完了ステータスの変更が可能です。
-                    フロントエンドにはReactを、バックエンドにはNode.jsとExpressを使用しました。
+                    日本語入力に特化した片手キーボードを作るには、ホームポジションに置きながら48キー打鍵できる必要があるため、2つのレイヤーを切り替えることができるキー数の多いキーボードを製作しました。
+                    筐体はDactyl Manuformを使用しています。
                 </p>
-
-                <h4>コードスニペット (JavaScript - React)</h4>
-                <pre><code class="language-javascript">// Reactコンポーネントの例
-import React, { useState } from 'react';
-
-function TaskItem({ task, onToggleComplete, onDelete }) {
-  return (
-    <div style={{ textDecoration: task.completed ? 'line-through' : 'none' }}>
-      {task.text}
-      <button onClick={() => onToggleComplete(task.id)}>
-        {task.completed ? 'Undo' : 'Complete'}
-      </button>
-      <button onClick={() => onDelete(task.id)}>Delete</button>
-    </div>
-  );
-}
-
-export default TaskItem;
-</code></pre>
-                <!--
-                    注意: HTML内で < や > を直接書くとタグとして解釈されるため、
-                    < は < 、 > は > と記述する必要があります。
-                    特にJSXのようなコードを載せる場合は注意してください。
-                -->
-
-                <h4>説明</h4>
-                <p>
-                    上記のコードは、タスクアイテムを表示するためのReactコンポーネントです。
-                    各タスクのテキスト表示、完了/未完了の切り替えボタン、削除ボタン機能が含まれています。
-                    状態管理にはReactの<code>useState</code>フックを利用しています。
-                </p>
-
-                <h4>画像</h4>
-                <img src="images/project1_screenshot1.png" alt="タスク管理アプリのスクリーンショット1" class="project-image">
-                <!-- ↑ images/project1_screenshot1.png はご自身の画像に置き換えてください -->
-                <p>図1: アプリのメイン画面。タスク一覧が表示されています。</p>
-
-                <img src="images/project1_screenshot2.png" alt="タスク管理アプリのスクリーンショット2" class="project-image">
-                <!-- ↑ images/project1_screenshot2.png はご自身の画像に置き換えてください -->
-                <p>図2: タスク追加モーダルの様子。</p>
-            </article>
-
-            <!-- プロジェクト2 -->
-            <article class="project">
-                <h3>プロジェクト名 2: ポートフォリオサイトジェネレーター (Python)</h3>
-                <p>
-                    Markdownファイルから静的なポートフォリオサイトを生成するPythonスクリプトです。
-                    設定ファイルで基本情報やプロジェクト情報を記述し、スクリプトを実行するだけでHTMLが生成されます。
-                    テンプレートエンジンにはJinja2を使用しました。
-                </p>
-
-                <h4>コードスニペット (Python)</h4>
-                <pre><code class="language-python"># Pythonスクリプトの例
-import os
-from jinja2 import Environment, FileSystemLoader
-
-def generate_portfolio(config_data, template_dir='templates', output_dir='output'):
-    """
-    ポートフォリオサイトを生成する関数
-    """
-    if not os.path.exists(output_dir):
-        os.makedirs(output_dir)
-
-    env = Environment(loader=FileSystemLoader(template_dir))
-    template = env.get_template('portfolio_template.html')
-
-    html_content = template.render(data=config_data)
-
-    output_path = os.path.join(output_dir, 'index.html')
-    with open(output_path, 'w', encoding='utf-8') as f:
-        f.write(html_content)
-    print(f"ポートフォリオが {output_path} に生成されました。")
-
-if __name__ == '__main__':
-    # ダミーデータ
-    my_config = {
-        'name': 'Taro Yamada',
-        'introduction': 'Pythonista and Web Developer.',
-        'projects': [
-            {'title': 'Project Alpha', 'description': 'An amazing project.'},
-            {'title': 'Project Beta', 'description': 'Another cool project.'}
-        ]
-    }
-    generate_portfolio(my_config)
-</code></pre>
-
-                <h4>説明</h4>
-                <p>
-                    このPythonスクリプトは、Jinja2テンプレートエンジンを使用してHTMLファイルを生成します。
-                    <code>generate_portfolio</code>関数が主要な処理を行い、設定データとテンプレートからHTMLを構築し、指定された出力ディレクトリに保存します。
-                    これにより、コンテンツの更新が容易になります。
-                </p>
+                <div class="project-details">
+                    <p><strong>マイコン:</strong> ProMicro</p>
+                    <p><strong>開発環境:</strong> Arduino IDE</p>
+                    <p><strong>使用言語:</strong> Arduino言語 (C++)</p>
+                </div>
 
                 <h4>関連画像</h4>
-                <img src="images/project2_diagram.png" alt="ポートフォリオジェネレータの処理フロー図" class="project-image">
-                <!-- ↑ images/project2_diagram.png はご自身の画像に置き換えてください -->
-                <p>図3: スクリプトの処理フローを示した図。</p>
+                <img src="images/project_katate_device.png" alt="片手日本語入力デバイスの外観" class="project-image">
+                <!-- ↑ images/project_katate_device.png はご自身の画像に置き換えてください -->
+                <p style="text-align:center; font-size:0.9em; color:#555;">図1: 製作した片手日本語入力デバイス</p>
+
+                <img src="images/project_katate_layout.png" alt="片手日本語入力デバイスのキーレイアウト" class="project-image">
+                <!-- ↑ images/project_katate_layout.png はご自身の画像に置き換えてください -->
+                <p style="text-align:center; font-size:0.9em; color:#555;">図2: キーレイアウト図</p>
+
+                <h4>プログラムコード (Arduino - ProMicro)</h4>
+                <pre><code class="language-cpp">// programv2.txt の内容をここに貼り付け
+// 以下の内容は programv2.txt からコピー＆ペーストしてください
+// HTML内で < や > を使う場合は < > にエスケープする必要があります。
+// #include <Keyboard.h> -> #include <Keyboard.h>
+
+#include <Keyboard.h> //実際は #include "Keyboard.h" かもしれません
+#include "keydefine.h" // 実際のファイル構成に合わせてください
+
+const int col = 7;
+const int row = 6;
+const int inputPin[col] = { 3,4,5,6,7,8,9 };
+const int outputPin[row] = { 19,18,15,14,16,10 };
+int i, j, k, L1State;
+bool currentState[row][col] = { 0 };
+bool beforeState[row][col] = { 0 };
+const int keyMap[row][col] = { { KC_ESC, KC_1, KC_2, KC_3, KC_4, KC_5, KC_MINS},
+                               { KC_TAB, KC_Q, KC_W, KC_E, KC_R, KC_T, KC_LBRC},
+                               { KC_LCTL, KC_A, KC_S, KC_D, KC_F, KC_G, KC_SCOL},
+                               { KC_LSFT, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_GRV},
+                               { 00, 00, 00, 54, 55, NONE, KC_BSPC},
+                               { 00, 00, 00, 64, 65, KC_SPC, 67} };
+
+const int Layer1[row][col] = { { 11, KC_6, KC_7, KC_8, KC_9, KC_0, KC_EQL},
+                               { 21, KC_Y, KC_U, KC_I, KC_O, KC_P, KC_RBRC},
+                               { 31, KC_H, KC_J, KC_K, KC_L, KC_SCOL, KC_QUOT},
+                               { 41, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_BSLS},
+                               { 00, 00, 00, 54, 55, NONE, KC_BSPC},
+                               { 00, 00, 00, 64, 65, KC_SPC, 67} };
+
+void setup() {
+  for( i = 0; i < row; i++){
+    pinMode(outputPin[i],OUTPUT);
+  }
+  for( i = 0; i < col; i++){
+    pinMode(inputPin[i],INPUT_PULLUP);
+  }
+  for( i = 0; i < col; i++){
+    for( j = 0; j < row; j++){
+      currentState[i][j] = HIGH;
+      beforeState[i][j] = HIGH;
+    }
+    digitalWrite(inputPin[i],HIGH);
+  }
+  Serial.begin(9600);
+  Keyboard.begin();
+}
+
+void loop() {
+  for (j = 0; j < row; j++) {
+    digitalWrite(outputPin[j], LOW);
+    for (k = 0; k < col; k++) {
+      currentState[j][k] = digitalRead(inputPin[k]);
+      if (currentState[j][k] != beforeState[j][k]) {
+        if(currentState[4][5] == LOW){ // このインデックスは実際のレイヤーキーの位置に合わせてください
+          L1State = 1;
+          Serial.println("↓↓Layer1 ON↓↓");
+        } else {
+          L1State = 0;
+        }
+        if (currentState[j][k] == LOW) {
+          if(L1State == 1){
+            Serial.print("Push:");
+            Serial.println(Layer1[j][k]);
+            Keyboard.press(Layer1[j][k]);
+          } else {
+            Serial.print("Push:");
+            Serial.println(keyMap[j][k]);
+            Keyboard.press(keyMap[j][k]);
+          }
+        } else {
+          if(L1State == 1){
+            Serial.print("Release:");
+            Serial.println(Layer1[j][k]);
+            Keyboard.release(Layer1[j][k]);
+          } else {
+            Serial.print("Release:");
+            Serial.println(keyMap[j][k]);
+            Keyboard.release(keyMap[j][k]);
+          }
+        }
+        beforeState[j][k] = currentState[j][k];
+      }
+    }
+    digitalWrite(outputPin[j], HIGH);
+    delay(1);
+  }
+}
+</code></pre>
             </article>
 
-            <!-- 他のプロジェクトも同様に追加できます -->
+            <!-- プロジェクト2: 本科5年 -->
+            <article class="project">
+                <h3>本科5年: USB接続可能なフリック入力デバイスの開発</h3>
+                <p>
+                    PCでもフリック入力を行うため、USB接続するだけで使えるデバイスを開発しました。大きさは3.5インチです。
+                    ライブラリの互換性の問題でディスプレイや開発環境を変更せざるを得ない状況もありましたが、無事完成しました。
+                    フォント表示の関係でローマ字表記となっていますが、入力は問題なく行えます。
+                    また、下部のボタンでモード切り替えができ、トラックパッドのように使用することも可能です。
+                    GUIの実装やフリック入力、トラックパッドの実装は試行錯誤が多く、やや難しかったです。
+                    配線を簡略化するため、KiCADという基板CADを用いて基板を設計し発注しました。
+                </p>
+                <div class="project-details">
+                    <p><strong>マイコン:</strong> Raspberry Pi Pico</p>
+                    <p><strong>開発環境:</strong> Arduino IDE</p>
+                    <p><strong>使用言語:</strong> Arduino言語 (C++)</p>
+                    <p><strong>その他ツール:</strong> KiCAD (基板設計)</p>
+                </div>
+
+                <h4>関連画像</h4>
+                <img src="images/project_flick_device.png" alt="フリック入力デバイスの外観" class="project-image">
+                <!-- ↑ images/project_flick_device.png はご自身の画像に置き換えてください -->
+                <p style="text-align:center; font-size:0.9em; color:#555;">図3: 開発したフリック入力デバイス</p>
+
+                <img src="images/project_flick_kicad.png" alt="フリック入力デバイスのKiCAD基板図" class="project-image">
+                <!-- ↑ images/project_flick_kicad.png はご自身の画像に置き換えてください -->
+                <p style="text-align:center; font-size:0.9em; color:#555;">図4: KiCADで設計した基板</p>
+
+                <h4>プログラムコード (Arduino - Raspberry Pi Pico)</h4>
+                <pre><code class="language-cpp">// Flick_and_Trackpad.txt の内容をここに貼り付け
+// 以下の内容は Flick_and_Trackpad.txt からコピー＆ペーストしてください
+// HTML内で < や > を使う場合は < > にエスケープする必要があります。
+// #include <Adafruit_GFX.h> -> #include <Adafruit_GFX.h>
+
+#include <Adafruit_GFX.h>
+#include <Adafruit_ILI9341.h>
+#include <XPT2046_Touchscreen.h>
+#include <SPI.h>
+#include "PluggableUSBHID.h" // 実際のファイル構成に合わせてください
+#include "USBMouseKeyboard.h" // 実際のファイル構成に合わせてください
+
+USBMouseKeyboard Keyboard;
+
+#define COMMON_SCK  18
+#define COMMON_MOSI 19
+#define COMMON_MISO 16
+
+#define TOUCH_CS 20
+#define TFT_DC  28
+#define TFT_CS  17
+#define TFT_RST 22
+
+#define MODE_SWITCH_PIN  2  // HIGH入力を検出するピン
+
+XPT2046_Touchscreen ts(TOUCH_CS);
+Adafruit_ILI9341 tft = Adafruit_ILI9341(&SPI, TFT_DC, TFT_CS, TFT_RST); // & は & にエスケープ
+
+// フリック入力のボタンの大きさ
+#define BUTTON_WIDTH 60
+#define BUTTON_HEIGHT 55
+// フリック入力のボタンのマージン
+#define BUTTON_MARGIN_X 5
+#define BUTTON_MARGIN_Y 5
+
+bool buttonState[4][5] = {false};
+bool flickTouchProcessed = false;
+bool trackpadTouchProcessed = false;
+bool trackpadMode = false;
+
+#define SWIPE_MARGIN 10 // フリック入力のタッチからのマージン
+#define SENSITIVITY 7 // トラックパッドの感度設定
+
+// キャリブレーション情報
+#define CALIBRATION_X_MIN 240
+#define CALIBRATION_X_MAX 3700
+#define CALIBRATION_Y_MIN 240
+#define CALIBRATION_Y_MAX 3700
+
+// スワイプの方向を表す列挙型
+enum SwipeDirection {
+  NO_SWIPE,
+  UP,
+  DOWN,
+  LEFT,
+  RIGHT
+};
+
+// ボタンの表示を格納する配列 (一部抜粋)
+const char* buttonValues[4][5][5] = {
+  {
+    {" ", " ", " ", " ", " "},
+    {"a", "i", "u", "e", "o"},
+    {"ka", "ki", "ku", "ke", "ko"},
+    {"sa", "si", "su", "se", "so"},
+    {" ", " ", " ", " ", " "}
+  },
+  // ... (以下略、必要であれば全体を記述)
+};
+
+//キーコードを格納する配列 (一部抜粋)
+char keycodeValues[4][5][5] = {
+  {
+    {' ', ' ', ' ', ' ', ' '},
+    {'3', 'e', '4', '5', '6'}, //あ行
+    {'t', 'g', 'h', ':', 'b'}, //か行
+    {'x', 'd', 'r', 'p', 'c'}, //さ行
+    {' ', ' ', ' ', ' ', ' '}
+  },
+  // ... (以下略、必要であれば全体を記述)
+};
+
+SwipeDirection getSwipeDirection(int16_t startX, int16_t startY, int16_t endX, int16_t endY) {
+  int16_t deltaX = endX - startX;
+  int16_t deltaY = endY - startY;
+
+  if (abs(deltaX) > abs(deltaY)) { // > は >
+    if (deltaX > SWIPE_MARGIN) {
+      return RIGHT;
+    } else if (deltaX < -SWIPE_MARGIN) { // < は <
+      return LEFT;
+    }
+  } else {
+    if (deltaY > SWIPE_MARGIN) {
+      return DOWN;
+    } else if (deltaY < -SWIPE_MARGIN) {
+      return UP;
+    }
+  }
+  return NO_SWIPE;
+}
+
+void drawButton(int row, int col) {
+  int buttonX = col * (BUTTON_WIDTH + BUTTON_MARGIN_X);
+  int buttonY = row * (BUTTON_HEIGHT + BUTTON_MARGIN_Y);
+
+  tft.fillRect(buttonX, buttonY, BUTTON_WIDTH, BUTTON_HEIGHT, ILI9341_WHITE);
+  tft.drawRect(buttonX, buttonY, BUTTON_WIDTH, BUTTON_HEIGHT, ILI9341_BLACK);
+  tft.setTextColor(ILI9341_BLACK);
+  tft.setCursor(buttonX + 10, buttonY + 20);  
+}
+
+TS_Point calibrateTouch(TS_Point rawPoint) {
+  int16_t x = map(rawPoint.x, CALIBRATION_X_MIN, CALIBRATION_X_MAX, 0, tft.width());
+  int16_t y = map(rawPoint.y, CALIBRATION_Y_MIN, CALIBRATION_Y_MAX, 0, tft.height());
+  return TS_Point(x, y, rawPoint.z);
+}
+
+void handleFlick() {
+  boolean bTouch = ts.touched();
+  if (bTouch == true && !flickTouchProcessed) { // && は &&
+    flickTouchProcessed = true;
+    TS_Point startTouch = ts.getPoint();
+    while (ts.touched()) {
+      delay(10);
+    }
+    TS_Point endTouch = ts.getPoint();
+    TS_Point calibratedStartTouch = calibrateTouch(startTouch);
+    TS_Point calibratedEndTouch = calibrateTouch(endTouch);
+
+    SwipeDirection swipeDirection = getSwipeDirection(
+      calibratedStartTouch.x, calibratedStartTouch.y,
+      calibratedEndTouch.x, calibratedEndTouch.y
+    );
+
+    int row = calibratedStartTouch.y / (BUTTON_HEIGHT + BUTTON_MARGIN_Y);
+    int col = calibratedStartTouch.x / (BUTTON_WIDTH + BUTTON_MARGIN_X);
+
+    if (row >= 0 && row < 4 && col >= 0 && col < 5) { // >= は >=, < は <
+      drawButton(row, col);
+      // ... (switch文以下略、文字入力処理)
+    }
+  } else if (bTouch == false) {
+    flickTouchProcessed = false;
+  }
+}
+
+void handleTrackpad() {
+  // ... (トラックパッド処理、一部省略)
+  static TS_Point prevTouchPoint;
+  boolean bTouch = ts.touched();
+  if (bTouch) {
+    TS_Point touchPoint = calibrateTouch(ts.getPoint());
+    if (!trackpadTouchProcessed) {
+      trackpadTouchProcessed = true;
+      prevTouchPoint = touchPoint;
+      return;
+    }
+    int16_t deltaX = SENSITIVITY * (touchPoint.x - prevTouchPoint.x);
+    int16_t deltaY = SENSITIVITY * (touchPoint.y - prevTouchPoint.y);
+    Keyboard.move(deltaX, deltaY);
+    prevTouchPoint = touchPoint;
+  } else {
+    trackpadTouchProcessed = false;
+  }
+}
+
+// ... (enterTrackpadMode, enterFlickMode, setup, loop関数はほぼそのままなので省略。必要なら全体を記述)
+void setup() {
+  Serial.begin(115200);
+  // SPI ピン設定 (Mbed specific)
+  // arduino::MbedSPI SPI(COMMON_SCK, COMMON_MISO, COMMON_MOSI); // この行は環境依存
+  // SPI.begin(); // For standard Arduino SPI
+
+  tft.begin();
+  tft.setRotation(1);
+  tft.setTextSize(2);
+  tft.fillScreen(ILI9341_BLACK);
+  ts.begin();
+  ts.setRotation(3);
+  // ... (初期ボタン描画)
+  enterFlickMode(); // 初期モード
+}
+
+void loop() {
+  bool modeSwitchState = digitalRead(MODE_SWITCH_PIN);
+  if (modeSwitchState == HIGH) { // ピン入力検知
+    if (!trackpadMode) {
+      enterTrackpadMode();
+    } else {
+      enterFlickMode();
+    }
+    delay(500); 
+  }
+
+  if (trackpadMode) {
+    handleTrackpad();
+  } else {
+    handleFlick();
+  }
+}
+</code></pre>
+            </article>
+
+            <!-- プロジェクト3: 専攻科1年 -->
+            <article class="project">
+                <h3>専攻科1年: Transformerモデルを用いて文脈から推定する感情分析手法の比較</h3>
+                <p>
+                    テキストデータから感情を抽出する手法の一つである、言語モデルを用いた方法に着目しました。
+                    その中でも、特にTransformerベースの複数の言語モデル（BERT, RoBERTa, ELECTRAなど）を使用し、
+                    日本語の文脈における感情分析の正答率にどのような違いが現れるかを比較・調査しました。
+                </p>
+                <p>
+                    実験はGoogle Colaboratory上でPythonを用いて行い、準備した学習用データセットを各言語モデルに学習させ、
+                    その精度を評価しました。この研究を通じて、モデルの種類や学習方法が感情分析の性能に与える影響について考察を深めました。
+                </p>
+                <div class="project-details">
+                    <p><strong>使用技術:</strong> Python, Transformer (BERT, RoBERTa, ELECTRAなど)</p>
+                    <p><strong>開発環境:</strong> Google Colaboratory</p>
+                </div>
+
+                <h4>関連画像</h4>
+                <img src="images/project_transformer_graph.png" alt="感情分析モデルの性能比較グラフ" class="project-image">
+                <!-- ↑ images/project_transformer_graph.png はご自身の画像に置き換えてください -->
+                <p style="text-align:center; font-size:0.9em; color:#555;">図5: 各言語モデルの学習ステップごとの正答率比較グラフ（例）</p>
+
+                <!-- このプロジェクトに直接的なコードスニペットがない場合は、GitHubリポジトリへのリンクなどを記載しても良いでしょう -->
+                <!--
+                <h4>関連リソース</h4>
+                <p>詳細なコードや論文は<a href="[GitHubリポジトリへのリンク]" target="_blank">こちらのGitHubリポジトリ</a>で公開予定です。</p>
+                -->
+            </article>
 
         </section>
 
         <section id="contact">
             <h2>連絡先 (Contact)</h2>
             <p>
-                ご連絡は以下のメールアドレスまでお願いいたします。
+                ご連絡は以下のメールアドレスまたはSNSまでお願いいたします。
             </p>
             <p>
                 メール: <a href="mailto:your.email@example.com">your.email@example.com</a>
             </p>
             <p>
                 GitHub: <a href="https://github.com/yourusername" target="_blank">yourusername</a><br>
-                LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">Your Profile</a>
-                <!-- 必要に応じて他のSNSリンクなども追加してください -->
+                <!-- LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">Your Profile</a> -->
+                <!-- 他のSNSリンクなども必要に応じて追加してください -->
             </p>
         </section>
     </div>
