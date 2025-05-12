@@ -170,7 +170,7 @@
             <!-- <img src="images/profile.jpg" alt="プロフィール写真" style="width:150px; height:150px; border-radius:50%; float:left; margin-right:20px;"> -->
             <!-- ↑ プロフィール写真が必要な場合は、この行のコメントを解除し、`images/profile.jpg` をご自身の画像に置き換えてください -->
             <p>
-                舞鶴高専 専攻科 2年 吉岡 晨
+                舞鶴高専 総合システム工学専攻 電気電子工学システムコース 2年 吉岡 晨
             </p>
         </section>
 
@@ -191,22 +191,20 @@
                 </div>
 
                 <h4>関連画像</h4>
-                <img src="images/project_katate_device.png" alt="片手日本語入力デバイスの外観" class="project-image">
+                <img src="images/img1" alt="片手日本語入力デバイスの外観" class="project-image">
                 <!-- ↑ images/project_katate_device.png はご自身の画像に置き換えてください -->
                 <p style="text-align:center; font-size:0.9em; color:#555;">図1: 製作した片手日本語入力デバイス</p>
 
-                <img src="images/project_katate_layout.png" alt="片手日本語入力デバイスのキーレイアウト" class="project-image">
+                <img src="images/img3" alt="片手日本語入力デバイスのキーレイアウト" class="project-image">
                 <!-- ↑ images/project_katate_layout.png はご自身の画像に置き換えてください -->
                 <p style="text-align:center; font-size:0.9em; color:#555;">図2: キーレイアウト図</p>
 
                 <h4>プログラムコード (Arduino - ProMicro)</h4>
-                <pre><code class="language-cpp">// programv2.txt の内容をここに貼り付け
-// 以下の内容は programv2.txt からコピー＆ペーストしてください
-// HTML内で < や > を使う場合は < > にエスケープする必要があります。
+                <pre><code class="language-cpp">
 // #include <Keyboard.h> -> #include <Keyboard.h>
 
-#include <Keyboard.h> //実際は #include "Keyboard.h" かもしれません
-#include "keydefine.h" // 実際のファイル構成に合わせてください
+#include <Keyboard.h> 
+#include "keydefine.h" 
 
 const int col = 7;
 const int row = 6;
