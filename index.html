@@ -14,34 +14,21 @@
             padding: 0;
             background-color: #f0f0f0;
             color: #333;
-            /* ナビゲーションバーが固定されるため、その下からの表示を考慮 */
-            /* padding-top: 60px; /* ボディ全体にパディングを入れる場合 */
         }
 
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-            padding: 20px;
-            background-color: #ffffff;
-            box-shadow: 0 0 10px rgba(0,0,0,0.05);
-            /* 固定ヘッダーの高さ分、上にスペースを空ける */
-            /* ナビゲーションバーの高さに合わせて調整してください */
-            padding-top: calc(20px + 40px); /* 元のpadding-top 20px + ナビゲーションの高さ目安 40px */
-            margin-top: 40px; /* ナビゲーションの高さ目安 */
-        }
-
+        /* ナビゲーションバーのスタイル - スクロールで表示/非表示用 */
         nav {
             text-align: center;
             padding: 10px 0;
             background: #555555;
-            /* ここから固定ヘッダーのスタイル */
-            position: fixed; /* 画面に固定 */
-            top: 0; /* 画面の上端に配置 */
-            width: 100%; /* 画面幅いっぱい */
-            z-index: 1000; /* 他の要素より手前に表示 */
+            position: fixed; /* 固定表示 */
+            top: 0; /* 初期位置は画面上部 */
+            left: 0;
+            right: 0;
+            width: 100%; /* 幅いっぱい */
+            z-index: 1000; /* 他の要素より前面に */
+            transition: top 0.3s ease-in-out; /* スムーズなアニメーション */
             box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* 影を追加して浮いているように見せる */
-            /* ここまで固定ヘッダーのスタイル */
         }
 
         nav a {
@@ -55,8 +42,19 @@
             background: #444444;
         }
 
+        .container {
+            width: 80%;
+            margin: auto;
+            /* padding-top はJavaScriptで調整します */
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-bottom: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.05);
+        }
+
         section {
-            padding: 25px 20px;
+            padding: 25px 0; /* containerで左右paddingを設定したので0に */
             margin-bottom: 20px;
             border-bottom: 1px #dddddd solid;
         }
@@ -106,8 +104,6 @@
             color: #444;
         }
 
-
-
         footer {
             text-align: center;
             padding: 20px;
@@ -119,9 +115,7 @@
         @media(max-width: 768px){
             .container {
                 width: 95%;
-                 /* モバイル時も固定ヘッダーの高さを考慮 */
-                padding-top: calc(20px + 70px); /* ナビゲーションが縦並びになる分、高さを調整 */
-                margin-top: 0; /* container自体のmargin-topは不要になる */
+                /* padding-top はJavaScriptで動的に設定される */
             }
 
             nav a {
@@ -185,7 +179,6 @@
                 <p>
                     PCでもフリック入力を行うためUSB接続するだけで使えるデバイスを開発した。大きさは3.5インチ
                     ライブラリの互換性の問題でディスプレイや開発環境を変更せざるを得なくなったが無事完成した
-
                 </p>
                 <div class="project-details">
                     <p><strong>マイコン:</strong> Raspberry Pi Pico</p>
@@ -209,11 +202,9 @@
                 <h3>専攻科1年: Transformerモデルを用いて文脈から推定する感情分析手法の比較</h3>
                 <p>
                     テキストデータから感情を抽出する手法の一つである、言語モデルを用いた方法の中でも、言語モデルによる正答率の違いを調べた
-
                 </p>
                 <p>
                     Google Colab上でPythonを用いて学習用データを3つの言語モデルに学習し、正答率のテストを行った
-
                 </p>
                 <div class="project-details">
                     <p><strong>使用技術:</strong> Python, Transformer</p>
@@ -235,6 +226,47 @@
     <footer>
         <p>© 2025 Shin Yoshioka. All Rights Reserved.</p>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const nav = document.querySelector('nav');
+            const container = document.querySelector('.container');
+            let lastScrollTop = 0;
+            const scrollThreshold = 50; // これ以上スクロールしたら非表示にし始める
+
+            // ナビゲーションバーの高さを取得し、containerのpadding-topを設定
+            function setContainerPadding() {
+                 const navHeight = nav.offsetHeight;
+                 // 元々のcontainerのpadding-top(20px)にナビの高さを加算
+                 container.style.paddingTop = (navHeight + 20) + 'px';
+            }
+
+            // ページの読み込み完了時とリサイズ時にpadding-topを設定
+            window.addEventListener('load', setContainerPadding);
+            window.addEventListener('resize', setContainerPadding);
+            // DOMContentLoadedでも一度実行 (ただし画像などの読み込み前だと高さが不安定になる場合あり)
+            setContainerPadding();
+
+
+            window.addEventListener('scroll', function() {
+                let currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+                // 下にスクロールしていて、かつスクロール量が閾値を超えている場合
+                if (currentScrollTop > lastScrollTop && currentScrollTop > scrollThreshold) {
+                    // ナビゲーションバーを画面外の上方向に移動させて隠す
+                    nav.style.top = `-${nav.offsetHeight}px`;
+                }
+                // 上にスクロールしている場合、またはページ最上部（閾値内）に戻った場合
+                else if (currentScrollTop < lastScrollTop || currentScrollTop <= scrollThreshold) {
+                    // ナビゲーションバーを元の位置に戻して表示する
+                    nav.style.top = '0';
+                }
+
+                // 現在のスクロール位置を保存
+                lastScrollTop = currentScrollTop;
+            });
+        });
+    </script>
 
 </body>
 </html>
