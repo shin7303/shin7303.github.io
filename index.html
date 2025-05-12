@@ -165,7 +165,9 @@
         <section id="about">
             <h2>自己紹介 (About Me)</h2>
             <p>
-                舞鶴高専 総合システム工学専攻 電気電子工学システムコース 2年 吉岡 晨
+                舞鶴高専舞鶴工業高等専門学校<br>
+                総合システム工学専攻 電気電子工学システムコース 2年<br>
+                吉岡 晨
             </p>
         </section>
 
@@ -193,90 +195,7 @@
                 <p style="text-align:center; font-size:0.9em; color:#555;">図2: キーレイアウト図</p>
 
                 <h4>プログラムコード (Arduino - ProMicro)</h4>
-                <pre><code class="language-cpp">
-#include <Keyboard.h>
-#include "keydefine.h"
-
-const int col = 7;
-const int row = 6;
-const int inputPin[col] = { 3,4,5,6,7,8,9 };
-const int outputPin[row] = { 19,18,15,14,16,10 };
-int i, j, k, L1State;
-bool currentState[row][col] = { 0 };
-bool beforeState[row][col] = { 0 };
-const int keyMap[row][col] = { { KC_ESC, KC_1, KC_2, KC_3, KC_4, KC_5, KC_MINS},
-                               { KC_TAB, KC_Q, KC_W, KC_E, KC_R, KC_T, KC_LBRC},
-                               { KC_LCTL, KC_A, KC_S, KC_D, KC_F, KC_G, KC_SCOL},
-                               { KC_LSFT, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_GRV},
-                               { 00, 00, 00, 54, 55, NONE, KC_BSPC},
-                               { 00, 00, 00, 64, 65, KC_SPC, 67} };
-
-const int Layer1[row][col] = { { 11, KC_6, KC_7, KC_8, KC_9, KC_0, KC_EQL},
-                               { 21, KC_Y, KC_U, KC_I, KC_O, KC_P, KC_RBRC},
-                               { 31, KC_H, KC_J, KC_K, KC_L, KC_SCOL, KC_QUOT},
-                               { 41, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_BSLS},
-                               { 00, 00, 00, 54, 55, NONE, KC_BSPC},
-                               { 00, 00, 00, 64, 65, KC_SPC, 67} };
-
-void setup() {
-  for( i = 0; i < row; i++){ // < は < にエスケープ
-    pinMode(outputPin[i],OUTPUT);
-  }
-  for( i = 0; i < col; i++){ // < は < にエスケープ
-    pinMode(inputPin[i],INPUT_PULLUP);
-  }
-  for( i = 0; i < col; i++){ // < は < にエスケープ
-    for( j = 0; j < row; j++){ // < は < にエスケープ
-      currentState[i][j] = HIGH;
-      beforeState[i][j] = HIGH;
-    }
-    digitalWrite(inputPin[i],HIGH);
-  }
-  Serial.begin(9600);
-  Keyboard.begin();
-}
-
-void loop() {
-  for (j = 0; j < row; j++) { // < は < にエスケープ
-    digitalWrite(outputPin[j], LOW);
-    for (k = 0; k < col; k++) { // < は < にエスケープ
-      currentState[j][k] = digitalRead(inputPin[k]);
-      if (currentState[j][k] != beforeState[j][k]) {
-        if(currentState[4][5] == LOW){
-          L1State = 1;
-          Serial.println("↓↓Layer1 ON↓↓");
-        } else {
-          L1State = 0;
-        }
-        if (currentState[j][k] == LOW) {
-          if(L1State == 1){
-            Serial.print("Push:");
-            Serial.println(Layer1[j][k]);
-            Keyboard.press(Layer1[j][k]);
-          } else {
-            Serial.print("Push:");
-            Serial.println(keyMap[j][k]);
-            Keyboard.press(keyMap[j][k]);
-          }
-        } else {
-          if(L1State == 1){
-            Serial.print("Release:");
-            Serial.println(Layer1[j][k]);
-            Keyboard.release(Layer1[j][k]);
-          } else {
-            Serial.print("Release:");
-            Serial.println(keyMap[j][k]);
-            Keyboard.release(keyMap[j][k]);
-          }
-        }
-        beforeState[j][k] = currentState[j][k];
-      }
-    }
-    digitalWrite(outputPin[j], HIGH);
-    delay(1);
-  }
-}
-</code></pre>
+                <script src="https://gist.github.com/shin7303/2c3d3e3b2f13448fc88a92d65d973968.js"></script>
             </article>
 
             <!-- プロジェクト2: 本科5年 -->
