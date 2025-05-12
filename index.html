@@ -34,8 +34,9 @@
         nav a {
             color: #f0f0f0;
             text-decoration: none;
-            padding: 10px 20px;
+            padding: 10px 15px; /* パディングを少し調整してリンクを詰めました */
             font-weight: bold;
+            display: inline-block; /* 横並びにする */
         }
         nav a:hover {
             background: #444444;
@@ -108,7 +109,7 @@
             }
 
             nav a {
-                display: block;
+                display: block; /* 狭い画面では縦並びに戻す */
                 padding: 8px;
             }
             .project-image {
@@ -121,7 +122,10 @@
 
     <nav>
         <a href="#about">自己紹介</a>
-        <a href="#projects">研究紹介</a>
+        <!-- 各プロジェクトへの個別リンクに変更 -->
+        <a href="#project-bk4">本科4年</a>
+        <a href="#project-bk5">本科5年</a>
+        <a href="#project-senko1">専攻科1年</a>
     </nav>
 
     <div class="container">
@@ -134,11 +138,11 @@
             </p>
         </section>
 
-        <section id="projects">
+        <section id="projects"> <!-- 研究紹介セクション全体は残しておきます -->
             <h2>研究紹介</h2>
 
-            <!-- プロジェクト1: 本科4年 -->
-            <article class="project">
+            <!-- プロジェクト1: 本科4年 (IDを追加) -->
+            <article class="project" id="project-bk4">
                 <h3>本科4年: タッチタイピング可能な片手日本語入力デバイスの製作</h3>
                 <p>
                     日本語入力に特化した片手キーボードを作るには、ホームポジションに置きながら48キー打鍵できる必要があるため、
@@ -162,8 +166,8 @@
                 <script src="https://gist.github.com/shin7303/2c3d3e3b2f13448fc88a92d65d973968.js"></script>
             </article>
 
-            <!-- プロジェクト2: 本科5年 -->
-            <article class="project">
+            <!-- プロジェクト2: 本科5年 (IDを追加) -->
+            <article class="project" id="project-bk5">
                 <h3>本科5年: USB接続可能なフリック入力デバイスの開発</h3>
                 <p>
                     PCでもフリック入力を行うためUSB接続するだけで使えるデバイスを開発した。大きさは3.5インチ
@@ -188,8 +192,8 @@
                 <script src="https://gist.github.com/shin7303/78362d757f5ce24ede236bbce81a3782.js"></script>
             </article>
 
-            <!-- プロジェクト3: 専攻科1年 -->
-            <article class="project">
+            <!-- プロジェクト3: 専攻科1年 (IDを追加) -->
+            <article class="project" id="project-senko1">
                 <h3>専攻科1年: Transformerモデルを用いて文脈から推定する感情分析手法の比較</h3>
                 <p>
                     テキストデータから感情を抽出する手法の一つである、言語モデルを用いた方法の中でも、言語モデルによる正答率の違いを調べた
@@ -207,10 +211,10 @@
                 <h4>関連画像</h4>
                 <img src="images/img8.png" alt="感情分析モデルの性能比較グラフ" class="project-image">
                 <p style="text-align:center; font-size:0.9em; color:#555;">図5: 各言語モデルの学習ステップごとの正答率比較グラフ</p>
-            
+
             <h4>プログラムコード (Python)</h4>
             <script src="https://gist.github.com/shin7303/b9a602af57a6c7dee6b2ba1aaa46ea83.js"></script>
-            
+
             </article>
 
         </section>
@@ -220,11 +224,5 @@
         <p>© 2025 Shin Yoshioka. All Rights Reserved.</p>
     </footer>
 
-    <!-- Prism.js JS (bodyの最後に配置するのが一般的) -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
-    <!-- C++言語のハイライトを追加 -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-cpp.min.js"></script>
-    <!-- 必要に応じて他の言語も追加できます -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script> -->
 </body>
 </html>
