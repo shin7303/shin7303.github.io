@@ -4,10 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
-    <!-- Prism.js CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet" />
-    <!-- 必要であれば、別のテーマを選択してください (例: prism-okaidia.min.css, prism-tomorrow.min.cssなど) -->
-    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css" rel="stylesheet" /> -->
 
     <style>
         /* --- 基本的なスタイル --- */
@@ -28,22 +24,6 @@
             background-color: #ffffff;
             box-shadow: 0 0 10px rgba(0,0,0,0.05);
         }
-
-        /* headerタグは削除されたようなので、関連スタイルはコメントアウトまたは削除も検討 */
-        /*
-        header {
-            background: #333333;
-            color: #f8f9fa;
-            padding: 1.5rem 0;
-            text-align: center;
-            border-bottom: #555555 3px solid;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.2rem;
-        }
-        */
 
         nav {
             text-align: center;
@@ -112,24 +92,7 @@
             color: #444;
         }
 
-        /* --- コード表示のスタイル (Prism.jsが適用するが、preの基本スタイルは残す) --- */
-        pre[class*="language-"] { /* Prism.jsがこのセレクタを使う */
-            background-color: #2b2b2b; /* Prismテーマで上書きされる場合あり */
-            padding: 15px;
-            border-radius: 5px;
-            overflow-x: auto;
-            font-size: 0.85em;
-            line-height: 1.6;
-        }
-        /* インラインコードのスタイル */
-        :not(pre) > code[class*="language-"],
-        p > code, li > code, span > code {
-            background-color: #e0e0e0;
-            padding: 2px 5px;
-            border-radius: 3px;
-            color: #333333;
-            font-family: 'Consolas', 'Monaco', 'Courier New', Courier, monospace;
-        }
+
 
         footer {
             text-align: center;
@@ -143,7 +106,7 @@
             .container {
                 width: 95%;
             }
-            /* header h1のスタイルはheaderタグがないため不要かも */
+
             nav a {
                 display: block;
                 padding: 8px;
@@ -178,8 +141,9 @@
             <article class="project">
                 <h3>本科4年: タッチタイピング可能な片手日本語入力デバイスの製作</h3>
                 <p>
-                    日本語入力に特化した片手キーボードを作るには、ホームポジションに置きながら48キー打鍵できる必要があるため、2つのレイヤーを切り替えることができるキー数の多いキーボードを製作しました。
-                    筐体はDactyl Manuformを使用しています。
+                    日本語入力に特化した片手キーボードを作るには、ホームポジションに置きながら48キー打鍵できる必要があるため、
+                    2つのレイヤーを切り替えることができるキー数の多いキーボードを製作した<br>
+                    筐体はDactyl Manuformを使用
                 </p>
                 <div class="project-details">
                     <p><strong>マイコン:</strong> ProMicro</p>
@@ -202,12 +166,9 @@
             <article class="project">
                 <h3>本科5年: USB接続可能なフリック入力デバイスの開発</h3>
                 <p>
-                    PCでもフリック入力を行うため、USB接続するだけで使えるデバイスを開発しました。大きさは3.5インチです。
-                    ライブラリの互換性の問題でディスプレイや開発環境を変更せざるを得ない状況もありましたが、無事完成しました。
-                    フォント表示の関係でローマ字表記となっていますが、入力は問題なく行えます。
-                    また、下部のボタンでモード切り替えができ、トラックパッドのように使用することも可能です。
-                    GUIの実装やフリック入力、トラックパッドの実装は試行錯誤が多く、やや難しかったです。
-                    配線を簡略化するため、KiCADという基板CADを用いて基板を設計し発注しました。
+                    PCでもフリック入力を行うためUSB接続するだけで使えるデバイスを開発した。大きさは3.5インチ。
+                    ライブラリの互換性の問題でディスプレイや開発環境を変更せざるを得なくなったが無事完成した。
+
                 </p>
                 <div class="project-details">
                     <p><strong>マイコン:</strong> Raspberry Pi Pico</p>
@@ -246,6 +207,9 @@
                 <h4>関連画像</h4>
                 <img src="images/img8.png" alt="感情分析モデルの性能比較グラフ" class="project-image">
                 <p style="text-align:center; font-size:0.9em; color:#555;">図5: 各言語モデルの学習ステップごとの正答率比較グラフ</p>
+            
+            <script src="https://gist.github.com/shin7303/b9a602af57a6c7dee6b2ba1aaa46ea83.js"></script>
+            
             </article>
 
         </section>
