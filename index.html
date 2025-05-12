@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>私のポートフォリオ</title>
+    <style>
+        /* --- 基本的なスタイル --- */
+        body {
+            font-family: 'Arial', 'Hiragino Sans', 'Meiryo', sans-serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+            border-bottom: #0779e4 3px solid;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        nav {
+            text-align: center;
+            padding: 10px 0;
+            background: #444;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-weight: bold;
+        }
+        nav a:hover {
+            background: #0779e4;
+        }
+
+        section {
+            padding: 20px;
+            margin-bottom: 20px;
+            border-bottom: 1px #eee solid;
+        }
+        section:last-child {
+            border-bottom: none;
+        }
+
+        h2 {
+            color: #333;
+            border-bottom: 2px solid #0779e4;
+            padding-bottom: 5px;
+        }
+
+        h3 {
+            color: #555;
+            margin-top: 30px;
+        }
+
+        /* --- プロジェクト関連のスタイル --- */
+        .project {
+            margin-bottom: 30px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-left: 5px solid #0779e4;
+        }
+
+        .project-image {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 15px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        /* --- コード表示のスタイル --- */
+        pre {
+            background-color: #2d2d2d; /* ダークな背景 */
+            color: #f8f8f2; /* 明るいテキストカラー */
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto; /* 横スクロールを可能に */
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+            line-height: 1.5;
+        }
+
+        code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+        /* インラインコードのスタイル */
+        p > code, li > code {
+            background-color: #eee;
+            padding: 2px 4px;
+            border-radius: 3px;
+            color: #c7254e;
+        }
+
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: #fff;
+            margin-top: 30px;
+        }
+
+        /* --- レスポンシブ対応（簡易版） --- */
+        @media(max-width: 768px){
+            .container {
+                width: 95%;
+            }
+            header h1 {
+                font-size: 2rem;
+            }
+            nav a {
+                display: block;
+                padding: 8px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>私の名前 / My Name</h1>
+    </header>
+
+    <nav>
+        <a href="#about">自己紹介</a>
+        <a href="#projects">制作物</a>
+        <a href="#contact">連絡先</a>
+    </nav>
+
+    <div class="container">
+        <section id="about">
+            <h2>自己紹介 (About Me)</h2>
+            <img src="images/profile.jpg" alt="プロフィール写真" style="width:150px; height:150px; border-radius:50%; float:left; margin-right:20px;">
+            <!-- ↑ images/profile.jpg はご自身の画像に置き換えてください -->
+            <p>
+                はじめまして。[あなたの名前]です。
+                ここにあなたの自己紹介文を記述します。どのような技術に興味があり、どのような物を作ってきたか、
+                これからどのようなことに挑戦したいかなどを自由に記述してください。
+                趣味や特技なども加えると、よりパーソナルな紹介になります。
+            </p>
+            <div style="clear:both;"></div> <!-- float解除 -->
+            <h3>スキル</h3>
+            <ul>
+                <li>プログラミング言語: Python, JavaScript, Java, HTML, CSS など</li>
+                <li>フレームワーク/ライブラリ: React, Vue.js, Django, Spring Boot など</li>
+                <li>データベース: MySQL, PostgreSQL, MongoDB など</li>
+                <li>ツール: Git, Docker, AWS など</li>
+            </ul>
+        </section>
+
+        <section id="projects">
+            <h2>制作物 (Projects)</h2>
+
+            <!-- プロジェクト1 -->
+            <article class="project">
+                <h3>プロジェクト名 1: すごいタスク管理アプリ</h3>
+                <p>
+                    このプロジェクトは、日々のタスクを効率的に管理するために開発したウェブアプリケーションです。
+                    ユーザーはタスクの追加、編集、削除、完了ステータスの変更が可能です。
+                    フロントエンドにはReactを、バックエンドにはNode.jsとExpressを使用しました。
+                </p>
+
+                <h4>コードスニペット (JavaScript - React)</h4>
+                <pre><code class="language-javascript">// Reactコンポーネントの例
+import React, { useState } from 'react';
+
+function TaskItem({ task, onToggleComplete, onDelete }) {
+  return (
+    <div style={{ textDecoration: task.completed ? 'line-through' : 'none' }}>
+      {task.text}
+      <button onClick={() => onToggleComplete(task.id)}>
+        {task.completed ? 'Undo' : 'Complete'}
+      </button>
+      <button onClick={() => onDelete(task.id)}>Delete</button>
+    </div>
+  );
+}
+
+export default TaskItem;
+</code></pre>
+                <!--
+                    注意: HTML内で < や > を直接書くとタグとして解釈されるため、
+                    < は < 、 > は > と記述する必要があります。
+                    特にJSXのようなコードを載せる場合は注意してください。
+                -->
+
+                <h4>説明</h4>
+                <p>
+                    上記のコードは、タスクアイテムを表示するためのReactコンポーネントです。
+                    各タスクのテキスト表示、完了/未完了の切り替えボタン、削除ボタン機能が含まれています。
+                    状態管理にはReactの<code>useState</code>フックを利用しています。
+                </p>
+
+                <h4>画像</h4>
+                <img src="images/project1_screenshot1.png" alt="タスク管理アプリのスクリーンショット1" class="project-image">
+                <!-- ↑ images/project1_screenshot1.png はご自身の画像に置き換えてください -->
+                <p>図1: アプリのメイン画面。タスク一覧が表示されています。</p>
+
+                <img src="images/project1_screenshot2.png" alt="タスク管理アプリのスクリーンショット2" class="project-image">
+                <!-- ↑ images/project1_screenshot2.png はご自身の画像に置き換えてください -->
+                <p>図2: タスク追加モーダルの様子。</p>
+            </article>
+
+            <!-- プロジェクト2 -->
+            <article class="project">
+                <h3>プロジェクト名 2: ポートフォリオサイトジェネレーター (Python)</h3>
+                <p>
+                    Markdownファイルから静的なポートフォリオサイトを生成するPythonスクリプトです。
+                    設定ファイルで基本情報やプロジェクト情報を記述し、スクリプトを実行するだけでHTMLが生成されます。
+                    テンプレートエンジンにはJinja2を使用しました。
+                </p>
+
+                <h4>コードスニペット (Python)</h4>
+                <pre><code class="language-python"># Pythonスクリプトの例
+import os
+from jinja2 import Environment, FileSystemLoader
+
+def generate_portfolio(config_data, template_dir='templates', output_dir='output'):
+    """
+    ポートフォリオサイトを生成する関数
+    """
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+
+    env = Environment(loader=FileSystemLoader(template_dir))
+    template = env.get_template('portfolio_template.html')
+
+    html_content = template.render(data=config_data)
+
+    output_path = os.path.join(output_dir, 'index.html')
+    with open(output_path, 'w', encoding='utf-8') as f:
+        f.write(html_content)
+    print(f"ポートフォリオが {output_path} に生成されました。")
+
+if __name__ == '__main__':
+    # ダミーデータ
+    my_config = {
+        'name': 'Taro Yamada',
+        'introduction': 'Pythonista and Web Developer.',
+        'projects': [
+            {'title': 'Project Alpha', 'description': 'An amazing project.'},
+            {'title': 'Project Beta', 'description': 'Another cool project.'}
+        ]
+    }
+    generate_portfolio(my_config)
+</code></pre>
+
+                <h4>説明</h4>
+                <p>
+                    このPythonスクリプトは、Jinja2テンプレートエンジンを使用してHTMLファイルを生成します。
+                    <code>generate_portfolio</code>関数が主要な処理を行い、設定データとテンプレートからHTMLを構築し、指定された出力ディレクトリに保存します。
+                    これにより、コンテンツの更新が容易になります。
+                </p>
+
+                <h4>関連画像</h4>
+                <img src="images/project2_diagram.png" alt="ポートフォリオジェネレータの処理フロー図" class="project-image">
+                <!-- ↑ images/project2_diagram.png はご自身の画像に置き換えてください -->
+                <p>図3: スクリプトの処理フローを示した図。</p>
+            </article>
+
+            <!-- 他のプロジェクトも同様に追加できます -->
+
+        </section>
+
+        <section id="contact">
+            <h2>連絡先 (Contact)</h2>
+            <p>
+                ご連絡は以下のメールアドレスまでお願いいたします。
+            </p>
+            <p>
+                メール: <a href="mailto:your.email@example.com">your.email@example.com</a>
+            </p>
+            <p>
+                GitHub: <a href="https://github.com/yourusername" target="_blank">yourusername</a><br>
+                LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">Your Profile</a>
+                <!-- 必要に応じて他のSNSリンクなども追加してください -->
+            </p>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2024 [あなたの名前]. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
